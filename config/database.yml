@@ -16,11 +16,9 @@
 #
 development:
   adapter: postgresql
-  encoding: unicode
   database: heir_bnb_development
-  pool: 5
-  username: heir_bnb
-  password:
+  host: localhost
+  username: AndreTran
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +46,11 @@ test:
   encoding: unicode
   database: heir_bnb_test
   pool: 5
-  username: heir_bnb
-  password:
+  username: AndreTran
 
 production:
   adapter: postgresql
   encoding: unicode
   database: heir_bnb_production
   pool: 5
-  username: heir_bnb
-  password:
+  username: AndreTran

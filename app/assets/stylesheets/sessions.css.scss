@@ -1,0 +1,80 @@
+// body {
+//     background-color: #000000;
+//     background-image: url(http://images3.alphacoders.com/226/226107.jpg);
+//     background-size: contain;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     position: fixed;
+//     top: 0; right: 0; bottom: 0; left: 0;
+//     z-index: 99999;
+// }
+
+body.splash {
+  background: url(http://images3.alphacoders.com/226/226107.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+  display: -moz-box;      /* OLD: Firefox (buggy) */
+  display: -ms-flexbox;   /* MID: IE 10 */
+  display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+  display: flex;
+  justify-content: center;
+  -webkit-align-items: center;
+}
+
+#auth-body {
+  //vertical aligning
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -250px;
+  height: 500px;
+
+
+  padding: 50px;
+  width: 500px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.7);
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.auth-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 30px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.auth-input:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.auth-button {
+  color: white;
+  font-size: 30px;
+  border-style: solid;
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: CornflowerBlue;
+  border-color: CornflowerBlue;
+  border-radius: 10px;
+}

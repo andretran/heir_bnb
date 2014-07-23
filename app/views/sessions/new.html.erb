@@ -1,0 +1,18 @@
+<div id='auth-body'>
+  <div id='auth-form'>
+
+    <form action="/session" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class='form-group'>
+        <input name="user[email]" type="text" placeholder='Email' class='auth-input'>
+        <input name="user[password]" type="password" placeholder='Password' class='auth-input'>
+      </div>
+      <input type="submit" value="Sign In" class="auth-button">
+    </form>
+  </div>
+</div>
+
+
+<% content_for :splash do %>
+  class="splash"
+<% end %>
