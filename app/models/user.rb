@@ -10,26 +10,35 @@
 #  session_token   :string(255)      not null
 #  created_at      :datetime
 #  updated_at      :datetime
-#
-
-#
 
 class User < ActiveRecord::Base
   validates :email, :session_token, :first_name, :last_name, presence: true
 
 
+
   has_many :spaces
+  has_attached_file :avatar, :styles => {
+                                  :big => "230x230>",
+                                  :medium => "90x90",
+                                  :small => "60x60",
+                                  :xs => "28x28" },
+                                  :default_url => ActionController::Base.helpers.asset_path("assets/default_:style.png")
+  validates_attachment_content_type :avatar, :content_type => /\Aimage/
+  # validates_attachment :avatar, :presence => true
+
+  before_create :set_filename
+
 
   attr_reader :password
   after_initialize :ensure_session_token
 
-  # def gravatar_url
-  #   "http://www.gravatar.com/avatar/#{ Digest::MD5.hexdigest(email) }"
-  # end
-
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
     user.try(:is_password?, user_params[:password]) ? user : nil
+  end
+
+  def set_filename
+    self.avatar.instance_write(:file_name, self.filename);
   end
 
   def password=(password)
@@ -46,6 +55,8 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
+
+
 
   protected
 

@@ -13,6 +13,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(current_user);
+    render :json => @user
+  end
+
   private
 
   def user_params
