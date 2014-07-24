@@ -1,14 +1,30 @@
 <div id='auth-body'>
   <div id='auth-form'>
 
+
     <form action="/session" method="post">
+
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <div class='form-group'>
-        <input name="user[email]" type="text" placeholder='Email' class='auth-input'>
+        <input name="user[email]" type="text" placeholder='Email Address' class='auth-input'>
         <input name="user[password]" type="password" placeholder='Password' class='auth-input'>
       </div>
       <input type="submit" value="Sign In" class="auth-button">
     </form>
+
+    <form action="/session" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input name="user[email]" type="hidden" value='guest@gmail.com'>
+      <input name="user[password]"  type="hidden" value='Password'>
+      <button type="submit" class="guest-button">Guest Login</button>
+    </form>
+    <hr>
+
+
+    <div class='SignUp'>
+      Don't have an account?
+      <a href='/users/new'>Sign Up</a>
+    </div
   </div>
 </div>
 

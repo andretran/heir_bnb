@@ -1,12 +1,32 @@
-<h1>Sign Up</h1>
+<div id='auth-body'>
+  <div id='auth-form'>
 
-<form action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
-</form>
+
+    <form action="/users" method="post">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class='form-group'>
+        <input name="user[first_name]" type="text" placeholder='First Name' class='auth-input'>
+        <input name="user[last_name]" type="text" placeholder='Last Name' class='auth-input'>
+        <input name="user[email]" type="text" placeholder='Email Address' class='auth-input'>
+        <input name="user[password]" type="password" placeholder='Password' class='auth-input'>
+      </div>
+      <input type="submit" value="Sign Up" class="signup-button">
+    </form>
+
+    <!-- <button type="submit" class="guest-button">Guest Login</button> -->
+
+    <hr>
+
+
+    <div class='SignUp'>
+      Already an Heirbnb member?
+      <a href='/session/new'>Log In</a>
+    </div
+  </div>
+</div>
+
+
+<% content_for :splash do %>
+  class="splash"
+<% end %>

@@ -4,9 +4,8 @@ window.HeirBnb = {
   Views: {},
   Routers: {},
   initialize: function() {
+    new HeirBnb.Routers.Boards({
+        '$rootEl' : $('#main')
+    });
   }
 };
-
-$(document).ready(function(){
-  HeirBnb.initialize();
-});
