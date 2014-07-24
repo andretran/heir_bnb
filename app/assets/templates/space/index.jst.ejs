@@ -1,5 +1,8 @@
 <ul>
   <% spaces.each(function(space){ %>
-    <li><%= space.escape('title') %></li>
+    <li>
+      <%= space.escape('title') %>
+      <img src='<%= space.escape('photo_preview') %>'>
+    </li>
     <% }); %>
 </ul>

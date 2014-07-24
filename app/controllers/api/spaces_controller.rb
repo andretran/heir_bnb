@@ -1,8 +1,8 @@
 module Api
   class SpacesController < ApiController
+    wrap_parameters include: [:photo_preview, :title, :description, :price, :filename]
     def create
       @space = current_user.spaces.new(space_params)
-
       if @space.save
         render json: @space
       else
@@ -35,7 +35,7 @@ module Api
     private
 
     def space_params
-      params.require(:space).permit(:title, :description, :price)
+      params.require(:space).permit(:title, :description, :price, :photo_preview, :filename)
     end
   end
 end
