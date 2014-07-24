@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user);
-    render :json => @user
+    @user = User.find(current_user)
+    render 'show.json.jbuilder'
   end
 
   private

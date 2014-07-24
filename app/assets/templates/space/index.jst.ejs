@@ -4,8 +4,8 @@
         <a href='#/spaces/<%= space.id %>'>
             <img class='index-image' src='<%= space.escape("photo_url") %>'>
             <img class='avatar-image img-circle' src='<%= space.escape("user_avatar") %>'>
-            <div class='price-tag'><%= space.get('price') + 'g' %></div>
-            <h2 class='space-title'><%= space.get('title') %></h2>
+            <div class='price-tag'><%= space.escape('price') + 'g' %></div>
+            <h2 class='space-title'><%= space.escape('title') %></h2>
         </a>
       </div>
     <% }); %>

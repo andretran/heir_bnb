@@ -1,5 +1,5 @@
 HeirBnb.Views.UserShow = Backbone.View.extend({
-  template :  JST['user/new'],
+  template :  JST['user/show'],
 
   render : function () {
     var renderedContent = this.template({ user: this.model });
