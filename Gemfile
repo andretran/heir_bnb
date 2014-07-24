@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'backbone-on-rails'
 gem "paperclip"
 gem "aws-sdk"
+gem 'figaro', '~> 1.0.0.rc1'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
