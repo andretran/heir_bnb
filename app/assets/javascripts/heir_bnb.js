@@ -10,5 +10,9 @@ window.HeirBnb = {
         '$rootEl' : $('#main')
     });
     Backbone.history.start();
+
+    $('.space-new').on('click', function () {
+      Backbone.history.navigate("spaces/new", { trigger: true });
+    });
   }
 };

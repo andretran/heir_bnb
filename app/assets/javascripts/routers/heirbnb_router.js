@@ -4,7 +4,8 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
   },
 
   routes: {
-    '' : 'index'
+    '' : 'index',
+    'spaces/new' : 'new'
   },
 
   index: function () {
@@ -18,6 +19,18 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
         that._swapView(indexView);
       }
     });
+  },
+
+  new: function () {
+    var that = this;
+
+    var newSpace = new HeirBnb.Models.Space();
+    var formView = new HeirBnb.Views.SpaceNew({
+      collection: HeirBnb.spaces,
+      model: newSpace
+    });
+
+    that._swapView(formView);
   },
 
   _swapView: function (view) {

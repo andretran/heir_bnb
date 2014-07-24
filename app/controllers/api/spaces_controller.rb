@@ -1,21 +1,21 @@
 module Api
   class SpacesController < ApiController
-    # def create
-    #   @space = current_user.spaces.new(space_params)
-    #
-    #   if @space.save
-    #     render json: @space
-    #   else
-    #     render json: @space.errors.full_messages, status: :unprocessable_entity
-    #   end
-    # end
-    #
+    def create
+      @space = current_user.spaces.new(space_params)
+
+      if @space.save
+        render json: @space
+      else
+        render json: @space.errors.full_messages, status: :unprocessable_entity
+      end
+    end
+
     # def destroy
     #   @space = current_user.spaces.find(params[:id])
     #   @space.try(:destroy)
     #   render json: {}
     # end
-
+    #
     def index
       @spaces = Space.all
       render json: @spaces
