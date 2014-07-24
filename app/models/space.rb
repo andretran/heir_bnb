@@ -15,4 +15,5 @@ class Space < ActiveRecord::Base
   validates :title, :description, :price, :user_id, presence: true
 
   belongs_to :user
+  has_attached_file :photo_preview, :styles => :big => "600x600>", :small => "50x50#"
 end
