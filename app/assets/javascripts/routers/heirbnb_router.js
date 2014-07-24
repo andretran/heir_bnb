@@ -5,17 +5,21 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
 
   routes: {
     '' : 'index',
-    'spaces/new' : 'new'
+    'spaces/new' : 'new',
+    'spaces/:id' : 'show'
   },
 
   index: function () {
     var that = this;
+
+    // var container = $('<div class=container></div>')
 
     HeirBnb.spaces.fetch({
       success: function () {
         var indexView = new HeirBnb.Views.SpacesIndex({
           collection : HeirBnb.spaces
         });
+        // container.htm(in)
         that._swapView(indexView);
       }
     });
@@ -31,6 +35,33 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
     });
 
     that._swapView(formView);
+  },
+
+  show : function (id) {
+    var that = this;
+    that._getSpace(id, function(space){
+      var showView = new HeirBnb.Views.SpaceShow({
+        model: space
+      });
+
+      that._swapView(showView);
+    });
+  },
+
+  _getSpace : function (id, callback) {
+      var space = HeirBnb.spaces.getOrFetch(id);
+      if (!space){
+        space = new HeirBnb.Models.Space({ id: id });
+        space.collection = HeirBnb.spaces;
+        space.fetch({
+          success: function () {
+            HeirBnb.spaces.add(space);
+            callback(space);
+          }
+        });
+      } else{
+        callback(space);
+      }
   },
 
   _swapView: function (view) {

@@ -18,7 +18,7 @@ module Api
     #
     def index
       @spaces = Space.all
-      render json: @spaces
+      render :index
     end
 
     #

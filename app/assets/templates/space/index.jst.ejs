@@ -1,8 +1,11 @@
-<ul>
-  <% spaces.each(function(space){ %>
-    <li>
-      <%= space.escape('title') %>
-      <img src='<%= space.escape('photo_preview') %>'>
-    </li>
-    <% }); %>
-</ul>
+<div class='col-xs-8'>
+  <ul>
+    <% spaces.each(function(space){ %>
+        <li>
+          <a href='#/spaces/<%= space.id %>'>
+              <img src='<%= space.escape('photo_url') %>'>
+          </a>
+        </li>
+      <% }); %>
+  </ul>
+</div>

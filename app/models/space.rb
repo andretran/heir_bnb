@@ -16,7 +16,7 @@ class Space < ActiveRecord::Base
   validates :title, :description, :price, :user_id, presence: true
 
   belongs_to :user
-  has_attached_file :photo_preview, :styles => { :big => "600x600>", :small => "50x50#" }
+  has_attached_file :photo_preview, :styles => { :big => "600x600>", :small => "450x300#" }
   validates_attachment_content_type :photo_preview, :content_type => /\Aimage/
   # validates_attachment_file_name :photo_preview, :matches => [/jpe?g\Z/]
   validates_attachment :photo_preview, :presence => true
