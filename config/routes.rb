@@ -5,5 +5,6 @@ HeirBnb::Application.routes.draw do
     resource :session
 
     namespace :api, default: {format: :json} do
+      resources :spaces
     end
 end

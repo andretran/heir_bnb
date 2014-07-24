@@ -4,8 +4,11 @@ window.HeirBnb = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new HeirBnb.Routers.Boards({
+    HeirBnb.spaces = new HeirBnb.Collections.Spaces();
+
+    new HeirBnb.Routers.Spaces({
         '$rootEl' : $('#main')
     });
+    Backbone.history.start();
   }
 };

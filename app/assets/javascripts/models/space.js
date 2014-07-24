@@ -1,3 +1,3 @@
-Heirbnb.Models.Space = Backbone.Model.extend({
-  
+HeirBnb.Models.Space = Backbone.Model.extend({
+
 });
