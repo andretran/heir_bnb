@@ -1,11 +1,11 @@
-<div class='col-xs-8'>
-  <ul>
-    <% spaces.each(function(space){ %>
-        <li>
-          <a href='#/spaces/<%= space.id %>'>
-              <img src='<%= space.escape('photo_url') %>'>
-          </a>
-        </li>
-      <% }); %>
-  </ul>
+<div class='col-xs-8 container'>
+  <% spaces.each(function(space){ %>
+      <div class='col-xs-6 image-preview'>
+        <a href='#/spaces/<%= space.id %>'>
+            <img class='index-image' src='<%= space.escape('photo_url') %>'>
+            <div class='price-tag'><%= space.get('price') + 'g' %></div>
+            <h2 class='space-title'><%= space.get('title') %></h2>
+        </a>
+      </div>
+    <% }); %>
 </div>
