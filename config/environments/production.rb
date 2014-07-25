@@ -33,8 +33,6 @@ HeirBnb::Application.configure do
 
   config.log_formatter = ::Logger::Formatter.new
 
-  config.active_record.dump_schema_after_migration = false
-
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_protocol => 'http',
