@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage/
   # validates_attachment :avatar, :presence => true
 
-  before_create :set_filename
+  # before_create :set_filename
 
 
   attr_reader :password
@@ -42,9 +42,9 @@ class User < ActiveRecord::Base
     user.try(:is_password?, user_params[:password]) ? user : nil
   end
 
-  def set_filename
-    self.avatar.instance_write(:file_name, self.filename);
-  end
+  # def set_filename
+  #   self.avatar.instance_write(:file_name, self.filename);
+  # end
 
   def password=(password)
     @password = password
