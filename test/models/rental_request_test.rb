@@ -4,8 +4,8 @@
 #
 #  id         :integer          not null, primary key
 #  space_id   :string(255)      not null
-#  integer    :string(255)      not null
 #  status     :string(255)      not null
+#  user_id    :string(255)      not null
 #  check_in   :date             not null
 #  check_out  :date             not null
 #  created_at :datetime

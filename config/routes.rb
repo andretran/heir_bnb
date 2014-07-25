@@ -6,5 +6,6 @@ HeirBnb::Application.routes.draw do
 
     namespace :api, defaults: {format: :json} do
       resources :spaces
+      resources :bookings, only: [:create, :update, :destroy]
     end
 end

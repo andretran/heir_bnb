@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   validates :email, :session_token, :first_name, :last_name, presence: true
 
 
-
+  has_many :rental_requests
   has_many :spaces
   has_attached_file :avatar, :styles => {
                                   :big => "230x230>",

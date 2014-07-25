@@ -19,7 +19,7 @@ class Space < ActiveRecord::Base
   attr_accessor :filename
   validates :title, :description, :price, :user_id, presence: true
 
-  has_many :rental_requests
+  has_many :bookings
 
 
   belongs_to :user
