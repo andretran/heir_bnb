@@ -1,6 +1,10 @@
 json.(space, :id, :title, :description, :price, :created_at, :updated_at)
 json.cover_photo(space.photo_preview.url(:small))
 json.user_avatar(space.user.avatar.url(:small))
+# 
+# json.bookings space.bookings do |booking|
+#   json.extract! booking, :id, :check_in, :check_out
+# end
 
 
 #

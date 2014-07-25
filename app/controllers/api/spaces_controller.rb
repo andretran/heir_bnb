@@ -22,15 +22,15 @@ module Api
     end
 
 
-    # def show
-    #   @board = Board.includes(:members, lists: :cards).find(params[:id])
-    #
-    #   if @board.is_member?(current_user)
-    #     render :show
-    #   else
-    #     render json: ["You aren't a member of this board"], status: 403
-    #   end
-    # end
+    def show
+      @space = Space.includes(:user, :bookings).find(params[:id])
+
+      if @space
+        render :show
+      else
+        render json: ["Space Not Found"], status: 403
+      end
+    end
 
     private
 
