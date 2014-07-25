@@ -6,7 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module HeirBnb
   class Application < Rails::Application
+    config.assets.initialize_on_precompile = false
   end
 end

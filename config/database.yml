@@ -47,10 +47,3 @@ test:
   database: heir_bnb_test
   pool: 5
   username: AndreTran
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: heir_bnb_production
-  pool: 5
-  username: AndreTran
