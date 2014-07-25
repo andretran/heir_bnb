@@ -1,6 +1,13 @@
 json.(@user, :id, :first_name, :last_name)
 json.avatar(@user.avatar.url(:big))
 
+json.review @user.reviews do |review|
+  json.extract! review, :id, :text
+  json.author do
+    json.user_avatar review.author.avatar.url(:small)
+  end
+end
+
 json.booking @user.bookings do |booking|
   json.extract! booking, :id, :check_in, :check_out, :status
   json.space do

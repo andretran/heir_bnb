@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   def create
     @booking = current_space.bookings.new(booking_params)
+    if @booking.save
+      render json: @booking
+    else
+      render json: @booking.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy

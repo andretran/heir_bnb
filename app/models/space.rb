@@ -19,7 +19,8 @@ class Space < ActiveRecord::Base
   attr_accessor :filename
   validates :title, :description, :price, :user_id, presence: true
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, as: :reviewable
 
 
   belongs_to :user
