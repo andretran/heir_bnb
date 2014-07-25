@@ -21,7 +21,7 @@ module Api
       render :index
     end
 
-    #
+
     # def show
     #   @board = Board.includes(:members, lists: :cards).find(params[:id])
     #

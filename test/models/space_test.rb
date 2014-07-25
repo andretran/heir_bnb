@@ -2,13 +2,17 @@
 #
 # Table name: spaces
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)      not null
-#  description :text             not null
-#  price       :integer          not null
-#  user_id     :integer          not null
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                         :integer          not null, primary key
+#  title                      :string(255)      not null
+#  description                :text             not null
+#  price                      :integer          not null
+#  user_id                    :integer          not null
+#  created_at                 :datetime
+#  updated_at                 :datetime
+#  photo_preview_file_name    :string(255)
+#  photo_preview_content_type :string(255)
+#  photo_preview_file_size    :integer
+#  photo_preview_updated_at   :datetime
 #
 
 require 'test_helper'

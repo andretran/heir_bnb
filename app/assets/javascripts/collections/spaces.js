@@ -9,7 +9,7 @@ HeirBnb.Collections.Spaces = Backbone.Collection.extend({
     if (space = this.get(id)) {
       space.fetch();
     } else {
-      space = new HeirBnB.Models.Space({ id: id });
+      space = new HeirBnb.Models.Space({ id: id });
       space.fetch({
         success: function () { spaces.add(space); }
       });
