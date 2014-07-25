@@ -33,14 +33,14 @@ HeirBnb::Application.configure do
 
   config.log_formatter = ::Logger::Formatter.new
 
-  
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_protocol => 'http',
     :url => ':s3_domain_url',
     :path => "images/:class/:id.:style.:extension",
     :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET_PRODUCTION'],
+      :bucket => ENV['AWS_BUCKET_DEVELOPMENT'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
       :s3_host_name => 's3-us-west-1.amazonaws.com'
