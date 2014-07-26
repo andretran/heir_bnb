@@ -22,6 +22,15 @@ module Api
     end
 
 
+    def update
+      @space = Space.find(params[:id])
+      if @space.update_attributes(space_params)
+          render json: @space
+      else
+        render json: @space.errors.full_messages, status: :unprocessable_entity
+      end
+    end
+
     def show
       @space = Space.includes(:user, :bookings).find(params[:id])
 

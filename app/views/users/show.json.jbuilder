@@ -8,6 +8,11 @@ json.review @user.reviews do |review|
   end
 end
 
+json.listings @user.spaces do |space|
+  json.extract! space, :id, :title, :price, :description
+  json.cover_photo space.photo_preview.url(:small)
+end
+
 json.booking @user.bookings do |booking|
   json.extract! booking, :id, :check_in, :check_out, :status
   json.space do

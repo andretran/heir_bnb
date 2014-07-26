@@ -1,9 +1,21 @@
 
 
 <form enctype="multipart/form-data">
-  <input type='text' name='space[title]' placeholder='title'>
-  <input type='text' name='space[description]' placeholder='description'>
-  <input type='number' name='space[price]' placeholder='price'>
+  <input
+    type='text'
+    name='space[title]'
+    placeholder='title'
+    value='<%= space.escape("title") %>'>
+  <input
+    type='text'
+    name='space[description]'
+    placeholder='description'
+    value='<%= space.escape("description") %>'>
+  <input
+    type='number'
+    name='space[price]'
+    placeholder='price'
+    value='<%= space.escape("price") %>'>
 
   <input type='file' name='space[photo_preview]' accept='image/*' multiple id='images'>
 

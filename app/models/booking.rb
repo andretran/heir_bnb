@@ -16,8 +16,9 @@ class Booking < ActiveRecord::Base
   STATUS_STATES = %w(APPROVED DENIED PENDING)
 
   validates :check_in, :check_out, :space_id, :status, presence: true
-  # validate :does_not_overlap_approved_booking
   validates :status, inclusion: STATUS_STATES
+  validate :does_not_overlap_approved_booking
+  validate :check_in_before_check_out
 
   belongs_to :user
   belongs_to :space
@@ -29,7 +30,7 @@ class Booking < ActiveRecord::Base
     transaction do
       self.status = "APPROVED"
       self.save!
-      overlapping_pending_bookings.update_all(status: 'DENIED')
+      overlapping_bookings.update_all(status: 'DENIED')
     end
   end
 
@@ -56,7 +57,6 @@ class Booking < ActiveRecord::Base
     self.status ||= "PENDING"
   end
 
-
   def overlapping_approved_bookings
     overlapping_bookings.where(" status = 'APPROVED'")
   end
@@ -79,4 +79,12 @@ class Booking < ActiveRecord::Base
       errors[:base] << "Those dates are not available"
     end
   end
+
+  def check_in_before_check_out
+    unless self.check_in < self.check_out
+      errors[:base] << "Invalid dates"
+    end
+  end
+
+
 end

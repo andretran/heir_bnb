@@ -24,7 +24,9 @@ class Space < ActiveRecord::Base
 
 
   belongs_to :user
-  has_attached_file :photo_preview, :styles => { :big => "600x600>", :small => "450x300#" }
+  has_attached_file :photo_preview, :styles => { :big => "600x600>",
+                                                 :small => "450x300#",
+                                                 :xs => "300x150" }
   validates_attachment_content_type :photo_preview, :content_type => /\Aimage/
   validates_attachment :photo_preview, :presence => true
   before_create :set_filename

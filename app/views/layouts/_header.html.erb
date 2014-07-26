@@ -1,7 +1,7 @@
 <nav class='navbar navbar-default' role='navigation'>
   <div class='container-fluid'>
     <div class='navbar-header'>
-      <a class="navbar-brand">Brand</a>
+      <a class="navbar-brand" href=''>Home</a>
     </div>
 
     <div class='collapse navbar-collapse'>
@@ -16,7 +16,7 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/profile/<%= current_user.id %>">Profile</a></li>
-            <li><a href="#">Stuff</a></li>
+            <li><a href="#/listings/<%= current_user.id %>">Listings</a></li>
             <li class="divider"></li>
             <li><%= link_to "Log Out", session_url, method: :delete%></li>
           </ul>

@@ -13,6 +13,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.set_filename(params[:filename])
+    @user.avatar = (params[:avatar])
+    if @user.update_attributes(user_params)
+        render 'show.json.jbuilder'
+      else
+        render json: @user.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
   def index
     @user = User.all
     render json: @user

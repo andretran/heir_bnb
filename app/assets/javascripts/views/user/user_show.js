@@ -20,6 +20,8 @@ HeirBnb.Views.UserShow = Backbone.CompositeView.extend({
       that.addReview(review);
     });
 
+    var editModal = new HeirBnb.Views.UserEdit({ model: this.model });
+    this.addSubview('#edit-button', editModal);
     return this;
   }
 });
