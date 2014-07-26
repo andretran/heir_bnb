@@ -4,7 +4,7 @@ json.avatar(@user.avatar.url(:big))
 json.review @user.reviews do |review|
   json.extract! review, :id, :text
   json.author do
-    json.user_avatar review.author.avatar.url(:small)
+    json.author_avatar review.author.avatar.url(:small)
   end
 end
 
