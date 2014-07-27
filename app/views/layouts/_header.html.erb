@@ -16,7 +16,9 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/profile/<%= current_user.id %>">Profile</a></li>
-            <li><a href="#/listings/<%= current_user.id %>">Listings</a></li>
+            <li><a href="#/listings/<%= current_user.id %>">Your Listings</a></li>
+            <li><a href="#/reservations/<%= current_user.id %>">Your Reservations</a></li>
+
             <li class="divider"></li>
             <li><%= link_to "Log Out", session_url, method: :delete%></li>
           </ul>

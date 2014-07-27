@@ -15,7 +15,7 @@ HeirBnb.Views.UserListings = Backbone.CompositeView.extend({
       that.addSpace(space);
     });
 
-
+    debugger;
     return this;
   }
 });

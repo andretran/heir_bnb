@@ -1,0 +1,10 @@
+<a href='#/spaces/<%= space.id %>'>
+  <img src='<%= space.get("cover_photo") %>'>
+  <h3> <%= space.escape('title') %> </h3>
+</a>
+<br>
+Check In: <%= booking.escape('check_in') %>
+<br>
+Check Out: <%= booking.escape('check_out') %>
+<br>
+Status: <%= booking.escape('status') %>

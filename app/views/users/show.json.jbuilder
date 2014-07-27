@@ -13,10 +13,12 @@ json.listings @user.spaces do |space|
   json.cover_photo space.photo_preview.url(:small)
 end
 
-json.booking @user.bookings do |booking|
+json.bookings @user.bookings do |booking|
   json.extract! booking, :id, :check_in, :check_out, :status
   json.space do
+    json.id booking.space.id
     json.title booking.space.title
-    json.cover_photo booking.space.photo_preview.url
+    json.price booking.space.price
+    json.cover_photo booking.space.photo_preview.url(:xs)
   end
 end

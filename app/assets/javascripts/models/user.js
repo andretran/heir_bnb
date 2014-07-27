@@ -13,6 +13,12 @@ HeirBnb.Models.User = Backbone.Model.extend({
     return this._listings;
   },
 
+  bookings: function (){
+    this._bookings = this._bookings ||
+        new HeirBnb.Collections.Bookings([], { user: this });
+    return this._bookings;
+  },
+
   parse: function (payload) {
     if (payload.avatar) {
       this.set('avatar_url', payload.avatar, { parse: true });
@@ -27,6 +33,11 @@ HeirBnb.Models.User = Backbone.Model.extend({
     if (payload.listings){
       this.listings().set(payload.listings, { parse: true });
       delete payload.listings;
+    }
+
+    if (payload.bookings){
+      this.bookings().set(payload.bookings, { parse: true});
+      delete payload.bookings;
     }
 
     return payload;

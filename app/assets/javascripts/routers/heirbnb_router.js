@@ -9,7 +9,8 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
     'spaces/edit/:id' : 'edit',
     'spaces/:id' : 'show',
     'profile/:id' : 'showProfile',
-    'listings/:id' : 'listings'
+    'listings/:id' : 'listings',
+    'reservations/:id' : 'reservations'
   },
 
   edit: function (id) {
@@ -47,6 +48,17 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
       success : function () {
         var listingView = new HeirBnb.Views.UserListings({ model : user});
         that._swapView(listingView);
+      }
+    });
+  },
+
+  reservations: function (id){
+    var that = this;
+    var user = new HeirBnb.Models.User({ id: id });
+    user.fetch({
+      success : function () {
+        var reservationView = new HeirBnb.Views.UserReservations({ model : user});
+        that._swapView(reservationView);
       }
     });
   },
