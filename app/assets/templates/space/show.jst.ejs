@@ -42,7 +42,7 @@
 
       <div class='col-xs-5 affix' id='right-info-box'>
           <div class='price-box'>
-            <%= space.escape("price") + "g" %>
+            <%= "$ " + space.escape("price")  %>
           </div>
           <div class='review-form'>
           </div>
@@ -50,7 +50,9 @@
     </div>
   </div>
 </div>
+<% if (space.reviews().length > 0) { %>
 
-<div id='reviews-box' class='container-full'>
-  Summary
-</div>
+  <div id='reviews-box' class='container-full'>
+    Summary
+  </div>
+<% } %>

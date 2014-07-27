@@ -1,6 +1,6 @@
 HeirBnb.Views.SpacesIndex = Backbone.View.extend({
   template: JST['space/index'],
-  className: 'container',
+  className: 'container-full',
 
 
   initialize: function () {
@@ -12,7 +12,7 @@ HeirBnb.Views.SpacesIndex = Backbone.View.extend({
 
     // put map here
 
-    this.$el.append('<div class="col-xs-4"></div>')
+    this.$el.append('<div class="col-xs-5"></div>')
 
 
     var renderedContent = this.template({ spaces: this.collection });
