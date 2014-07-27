@@ -1,23 +1,50 @@
-
+<% debugger %>
 
 <form enctype="multipart/form-data">
-  <input
-    type='text'
-    name='space[title]'
-    placeholder='title'
-    value='<%= space.escape("title") %>'>
-  <input
-    type='text'
-    name='space[description]'
-    placeholder='description'
-    value='<%= space.escape("description") %>'>
-  <input
-    type='number'
-    name='space[price]'
-    placeholder='price'
-    value='<%= space.escape("price") %>'>
+  <div class='form-group'>
+    <label>
+        Title
+      <input
+        class='form-control'
+        type='text'
+        name='space[title]'
+        value='<%= space.escape("title") %>'>
+    </label>
+  </div>
+  <div class='form-group'>
+    <label>
+      Description
+      <textarea
+        class='form-control'
+        rows='8'
+        cols='50'
+        name='space[description]'><%= space.escape("description") %></textarea>
+    </label>
+  </div>
+  <div class='form-group input-large'>
+    <label>
+      Price
+    <input
+      type='number'
+      class='form-control'
+      name='space[price]'
+      value='<%= space.escape("price") %>'>
+    </label>
+  </div>
+  <div class='form-group'>
+    <label>
+      Cover Photo
+      <input
+        type='file'
+        name='space[photo_preview]'
+        accept='image/*'
+        multiple id='images'>
+    </label>
+  </div>
 
-  <input type='file' name='space[photo_preview]' accept='image/*' multiple id='images'>
-
-  <button type='submit' class='btn btn-default'>Create</button>
+  <% if (space.isNew()){  %>
+    <button type='submit' class='btn btn-primary'>Create</button>
+  <%} else{  %>
+    <button type='submit' class='btn btn-primary'>Save</button>
+  <% } %>
 </form>

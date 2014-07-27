@@ -1,4 +1,19 @@
-<img src='<%= space.get('photo_url') %>'>
+<div class='space-banner'>
+  <a href='#/profile/<%= space.escape("user_id") %>'>
+    <div>
+      <img src='<%= space.get("user_avatar") %>' class='img-circle'>
+    </div>
+    <div class='owner_name'>
+      <%= space.escape("user_name") %>
+    </div>
+  </a>
+</div>
+
+
+<div>
+<img src='<%= space.get("photo_url") %>'>
+</div>
+
 <br>
 Title: <%= space.get('title') %>
 <br>

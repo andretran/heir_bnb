@@ -1,3 +1,6 @@
-<img src='<%= space.get("photo_url") %>'>
-<h2> <%= space.escape('title') %> </h2>
+<a href='#/spaces/<%= space.id %>'>
+  <img src='<%= space.get("photo_url") %>'>
+  <h2> <%= space.escape('title') %> </h2>
+</a>
 <a href='#/spaces/edit/<%= space.id %>' class='btn btn-success'>Edit Space</a>
+<button class='btn btn-danger delete-button'> Delete </button>

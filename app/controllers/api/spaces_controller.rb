@@ -10,12 +10,12 @@ module Api
       end
     end
 
-    # def destroy
-    #   @space = current_user.spaces.find(params[:id])
-    #   @space.try(:destroy)
-    #   render json: {}
-    # end
-    #
+    def destroy
+      @space = current_user.spaces.find(params[:id])
+      @space.try(:destroy)
+      render json: {}
+    end
+    
     def index
       @spaces = Space.all
       render :index

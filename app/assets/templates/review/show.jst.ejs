@@ -1,2 +1,4 @@
-<img src='<%= review.get("author_avatar") %>'>
+<a href='#/profile/<%= review.escape("author_id") %>'>
+  <img src='<%= review.get("author_avatar") %>'>
+</a>
 <%= review.escape('text') %>

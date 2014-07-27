@@ -14,6 +14,7 @@
 //= require jquery.serializejson
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrapValidator
 //= require underscore
 //= require backbone
 //= require heir_bnb
