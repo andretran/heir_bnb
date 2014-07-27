@@ -16,6 +16,12 @@
 
 .space-title {
   color: #818485;
+  font-size: 18px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+  width: 300px;
 }
 
 .price-tag {
@@ -28,6 +34,11 @@
   color: white;
   position: absolute;
   background-color: rgba(54, 56, 57, 0.85);
+}
+
+.title-header{
+  z-index: 3;
+  position: relative;
 }
 
 .avatar-image {

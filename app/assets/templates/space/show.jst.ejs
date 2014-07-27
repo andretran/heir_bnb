@@ -1,24 +1,42 @@
 <div class='space-banner'>
   <a href='#/profile/<%= space.escape("user_id") %>'>
-    <div>
-      <img src='<%= space.get("user_avatar") %>' class='img-circle'>
-    </div>
-    <div class='owner_name'>
-      <%= space.escape("user_name") %>
-    </div>
+      <img src='<%= space.get("user_avatar") %>' class='img-circle owner-avatar'>
   </a>
+  <div class='owner-name'>
+    <%= space.escape("user_name") %>
+  </div>
+  <div class='title-header'>
+    <h1 id='space-title'> <%= space.get('title') %> </h1>
+  </div>
 </div>
 
+<div class='container-full show-space-container'>
+  <div class='row'>
+  <div class='col-xs-7 space-information' id='left-info-box'>
 
-<div>
-<img src='<%= space.get("photo_url") %>'>
-</div>
+    <div class='about-listing'>
+      <h3> About This Listing </h3>
 
-<br>
-Title: <%= space.get('title') %>
-<br>
-Description: <%= space.get('description') %>
+      This is a great private room in my full
+      floor flat on the 2nd floor of a beautiful
+      Williamsburg townhome. The apartment is central
+      to all that williamsburg has to offer. JMZ and L
+      trains are all one stop away from Manhattan!
+    </div>
+
+    <img src='<%= space.get("photo_url") %>' class='show-image'>
 
 
-<div id='reviews-box'>
+    Description: <%= space.get('description') %>
+
+
+    <div id='reviews-box'>
+    </div>
+  </div>
+
+  <div class='col-xs-5 space-information' id='right-info-box'>
+
+    form for check in
+  </div>
+  </div>
 </div>
