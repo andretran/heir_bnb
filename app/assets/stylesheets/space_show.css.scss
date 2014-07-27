@@ -21,7 +21,7 @@
   z-index: 3;
   position: absolute;
   left: 25%;
-  top: 20%;
+  display: inline-block;
   font-size: 20px;
 }
 
@@ -37,9 +37,11 @@
   border-width: 1px;
 }
 
-.about-listing{
+.content{
+  color: #5B5F61;
+  border-width: 1px;
+  padding-bottom: 25px;
   margin-right: 20px;
-  margin-bottom: 20px;
 }
 
 .show-image{
@@ -47,14 +49,60 @@
   height: 100%;
 }
 
-.space-information{
-  background-color: #F5F5F5;
+#right-info-box{
+  left: 65%;
+  background-color: white;
+  width: 25%;
+  padding: 0px;
 }
 
-#right-info-box{
-  
+.review-form{
+  border-color: #DCE0E0;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  padding: 5%;
+}
+
+.price-box{
+  font-size: 25px;
+  padding-left: 5%;
+  color: white;
+  background-color: rgba(69, 68, 67, 0.85);
 }
 
 #left-info-box{
-  padding-left: 14%;
+  padding-left: 16%;
+}
+
+.review-divider{
+  border-color: #DCE0E0;
+  margin-left: 8.5%;
+  width: 430px;
+}
+
+#reviews-box{
+  color: #82888A;
+  padding-top: 2.5%;
+  padding-left: 17%;
+  border-color: #DCE0E0;
+  border-top-style: solid;
+  border-width: 1px;
+}
+
+.description-box{
+  margin-top: 5%;
+  padding-top: 2.5%;
+  border-color: #DCE0E0;
+  border-top-style: solid;
+  border-width: 1px;
+}
+
+.left-description{
+  color: #82888A;
+}
+
+.right-description{
+  padding-bottom: 5%;
+  color: #5B5F61;
 }

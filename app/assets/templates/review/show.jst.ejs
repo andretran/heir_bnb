@@ -1,4 +1,12 @@
-<a href='#/profile/<%= review.escape("author_id") %>'>
-  <img src='<%= review.get("author_avatar") %>'>
-</a>
-<%= review.escape('text') %>
+<div class='col-xs-1'>
+  <a href='#/profile/<%= review.escape("author_id") %>'>
+    <img src='<%= review.get("author_avatar")%>' class='img-circle'>
+  </a>
+  <div class='review-author-name'>
+    <%= review.escape('author_name') %>
+  </div>
+</div>
+
+<div class='col-xs-5 review-text'>
+  <%= review.escape('text') %>
+</div>

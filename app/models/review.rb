@@ -1,14 +1,14 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: reviews
 #
-#  id               :integer          not null, primary key
-#  text             :string(255)      not null
-#  author_id        :integer          not null
-#  commentable_id   :integer          not null
-#  commentable_type :string(255)      not null
-#  created_at       :datetime
-#  updated_at       :datetime
+#  id              :integer          not null, primary key
+#  text            :text             not null
+#  author_id       :integer          not null
+#  reviewable_id   :integer          not null
+#  reviewable_type :string(255)      not null
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 
 class Review < ActiveRecord::Base

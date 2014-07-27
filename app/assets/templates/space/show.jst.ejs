@@ -10,33 +10,47 @@
   </div>
 </div>
 
-<div class='container-full show-space-container'>
-  <div class='row'>
-  <div class='col-xs-7 space-information' id='left-info-box'>
+<div style='background: #F5F5F5'>
+  <div class='container-full'>
+    <div class='row'>
+      <div class='col-xs-7' id='left-info-box'>
 
-    <div class='about-listing'>
-      <h3> About This Listing </h3>
+        <div class='content'>
+          <h3> About This Listing </h3>
 
-      This is a great private room in my full
-      floor flat on the 2nd floor of a beautiful
-      Williamsburg townhome. The apartment is central
-      to all that williamsburg has to offer. JMZ and L
-      trains are all one stop away from Manhattan!
+          This is a great private room in my full
+          floor flat on the 2nd floor of a beautiful
+          Williamsburg townhome. The apartment is central
+          to all that williamsburg has to offer. JMZ and L
+          trains are all one stop away from Manhattan!
+        </div>
+
+        <img src='<%= space.get("photo_url") %>' class='show-image'>
+
+
+        <div class='container-full description-box'>
+          <div class='col-xs-2 left-description'>Description</div>
+          <div class='col-xs-10 right-description'>
+             <div style='white-space: pre-line;'>
+               <%= space.get('description') %>
+             </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class='col-xs-5 affix' id='right-info-box'>
+          <div class='price-box'>
+            <%= space.escape("price") + "g" %>
+          </div>
+          <div class='review-form'>
+          </div>
+      </div>
     </div>
-
-    <img src='<%= space.get("photo_url") %>' class='show-image'>
-
-
-    Description: <%= space.get('description') %>
-
-
-    <div id='reviews-box'>
-    </div>
   </div>
+</div>
 
-  <div class='col-xs-5 space-information' id='right-info-box'>
-
-    form for check in
-  </div>
-  </div>
+<div id='reviews-box' class='container-full'>
+  Summary
 </div>

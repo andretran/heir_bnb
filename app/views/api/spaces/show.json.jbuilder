@@ -8,6 +8,7 @@ json.review @space.reviews do |review|
   json.extract! review, :id, :text
   json.author do
     json.id review.author.id
+    json.author_name review.author.first_name
     json.author_avatar review.author.avatar.url(:small)
   end
 end

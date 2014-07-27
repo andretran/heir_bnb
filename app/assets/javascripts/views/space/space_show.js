@@ -18,7 +18,13 @@ HeirBnb.Views.SpaceShow = Backbone.CompositeView.extend({
     var that = this;
     this.model.reviews().each(function(review){
       that.addReview(review);
+      if (review != that.model.reviews().last){
+        $('#reviews-box').append('<hr align="left" class="review-divider"></hr>');
+      }
     });
+
+    var newBooking = new HeirBnb.Models.Booking();
+    this.addSubview('.review-form', new HeirBnb.Views.BookingNew({ model: newBooking }));
 
     return this;
   }
