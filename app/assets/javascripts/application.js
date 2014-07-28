@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require bootstrapValidator
 //= require moment
+//= require moment-range
 //= require bootstrap-datetimepicker
 //= require underscore
 //= require backbone
