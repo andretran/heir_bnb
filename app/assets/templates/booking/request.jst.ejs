@@ -1,0 +1,28 @@
+<div class='container-full'>
+  <div class='col-xs-4 left-request-panel'>
+    <a href='#/profile/<%= request.user().id %>'>
+      <img src='<%= request.user().get("avatar") %>' class='img-circle'>
+    </a>
+  <div class='request-user-name'>
+    <%= request.user().escape('name') %>
+  </div>
+    <strong>Check In:</strong> <%= request.escape('check_in') %>
+    <strong>Check Out:</strong> <%= request.escape('check_out') %>
+
+  <div class='button-group'>
+    <button class='accept-button'>Accept</button>
+    <button class='decline-button'>Decline</button>
+  </div>
+  </div>
+
+  <div class='col-xs-8 right-request-panel'>
+    <div class='request-space-picture'>
+      <a href='#/spaces/<%= request.space().id %>'>
+        <img src='<%= request.space().get("cover_photo") %>' class='img-thumbnail'>
+    </div>
+    <div class='request-space-title'>
+      <%= request.space().escape('title') %>
+    </div>
+    </a>
+  </div>
+</div>

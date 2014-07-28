@@ -16,6 +16,16 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/profile/<%= current_user.id %>">Profile</a></li>
+            <li>
+                <a href="#/requests/<%= current_user.id %>">
+                    Requests
+                    <% unless current_user.bookings.empty? %>
+                      <div class='notification'>
+                        <%= current_user.bookings.length %>
+                      </div>
+                    <% end %>
+                </a>
+            </li>
             <li><a href="#/listings/<%= current_user.id %>">Your Listings</a></li>
             <li><a href="#/reservations/<%= current_user.id %>">Your Reservations</a></li>
 

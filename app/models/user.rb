@@ -19,9 +19,11 @@
 class User < ActiveRecord::Base
   validates :email, :session_token, :first_name, :last_name, presence: true
 
+
   has_many :reviews, as: :reviewable, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :spaces, dependent: :destroy
+  has_many :requests, through: :spaces, source: :bookings
   has_attached_file :avatar, :styles => {
                                   :big => "230x230>",
                                   :medium => "90x90",

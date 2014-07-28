@@ -1,0 +1,75 @@
+.left-request-panel{
+  text-align: center;
+  background-color: white;
+  border-radius: 2px;
+  padding: 0px;
+  padding-top: 1%;
+}
+
+
+
+.request-user-name{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.listing-container{
+  padding: 0px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.button-group{
+  margin: 5%;
+  margin-top: 10%;
+}
+
+.accept-button{
+  border-style: solid;
+  border-radius: 2px;
+  color: white;
+  border-color: MediumSpringGreen;
+  background-color: MediumSpringGreen;
+}
+
+.decline-button{
+  border-style: solid;
+  border-radius: 2px;
+  color: white;
+  border-color: #FF5A5F;
+  background-color: #FF5A5F;
+}
+
+.request-card{
+  margin-top: 2%;
+  padding: 10px;
+  background-color: rgb(211, 211, 211);
+  // background-color: rgb(237, 237, 237);
+  border-radius: 20px;
+  border-color: white;
+  border-style: solid;
+  border-width: 10px;
+}
+
+.request-space-picture{
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+.request-space-title{
+  background-color: rgba(78, 78, 76, 0.8);
+  border-radius: 2px;
+  color: white;
+  left: 11.5%;
+  top: 73%;
+  z-index: 2;
+  position: absolute;
+  padding-left: 10%;
+  font-size: 20px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+  width: 300px;
+}
