@@ -1,10 +1,9 @@
 HeirBnb.Views.UserReservations = Backbone.CompositeView.extend({
   template: JST['user/listings'],
 
-  addSpace: function (space, booking){
+  addSpace: function (booking){
     var spaceReservation = new HeirBnb.Views.SpaceReservation({
-          booking_model: booking,
-          model : space
+          model: booking
     });
     this.addSubview('#listings',spaceReservation);
   },
@@ -15,7 +14,7 @@ HeirBnb.Views.UserReservations = Backbone.CompositeView.extend({
 
     var that = this
     this.model.bookings().each(function (booking){
-      that.addSpace(booking.space(), booking);
+      that.addSpace(booking);
     });
 
 

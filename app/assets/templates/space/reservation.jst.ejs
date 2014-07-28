@@ -1,10 +1,37 @@
-<a href='#/spaces/<%= space.id %>'>
-  <img src='<%= space.get("cover_photo") %>'>
-  <h3> <%= space.escape('title') %> </h3>
-</a>
-<br>
-Check In: <%= booking.escape('check_in') %>
-<br>
-Check Out: <%= booking.escape('check_out') %>
-<br>
-Status: <%= booking.escape('status') %>
+<div class='container-full'>
+  <div class='col-xs-4 left-request-panel'>
+    <div class='reservation-status'>
+      <strong><%= reservation.escape('status') %></strong>
+    </div>
+
+    <% if (reservation.escape('status') === 'APPROVED') { %>
+      <div class='reservation-circle-ok'></div>
+      <span class='glyphicon glyphicon-ok reservation-status-icon'></span>
+    <% } else if (reservation.escape('status') === 'DENIED') { %>
+      <div class='reservation-circle-decline'></div>
+      <span class='glyphicon glyphicon-remove reservation-status-icon'></span>
+    <% } else { %>
+      <div class='reservation-circle-pending'></div>
+      <span class='glyphicon reservation-status-icon-pending'>?</span>
+    <% } %>
+
+    <div class='request-user-name'>
+      <%= reservation.user().escape('name') %>
+    </div>
+    <div class='reservation-description'>
+      <strong>Check In:</strong> <%= reservation.escape('check_in') %>
+      <strong>Check Out:</strong> <%= reservation.escape('check_out') %>
+    </div>
+  </div>
+
+  <div class='col-xs-8 right-request-panel'>
+    <div class='request-space-picture'>
+      <a href='#/spaces/<%= reservation.space().id %>'>
+        <img src='<%= reservation.space().get("cover_photo") %>' class='img-thumbnail'>
+    </div>
+    <div class='request-space-title'>
+      <%= reservation.space().escape('title') %>
+    </div>
+    </a>
+  </div>
+</div>

@@ -26,7 +26,7 @@ HeirBnb.Views.UserEdit = Backbone.View.extend({
 
       that.model.save({
         success: function () {
-          Backbone.history.navigate("profile/" + this.model.id, { trigger: true });
+          this.$('#myModalLabel').model('hide');
         }
       });
     }

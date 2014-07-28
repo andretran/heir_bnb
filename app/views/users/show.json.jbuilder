@@ -35,6 +35,6 @@ json.bookings @user.bookings do |booking|
     json.id booking.space.id
     json.title booking.space.title
     json.price booking.space.price
-    json.cover_photo booking.space.photo_preview.url(:xs)
+    json.cover_photo booking.space.photo_preview.url(:small)
   end
 end

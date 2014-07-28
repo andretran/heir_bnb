@@ -1,0 +1,61 @@
+.reservation-status-icon{
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  left: 36%;
+}
+
+.reservation-status-icon-pending{
+  text-align: center;
+  font-size: 80px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: 37%;
+}
+
+.reservation-status{
+  margin-bottom: 5%;
+}
+
+.reservation-circle-ok{
+  margin-left: 25%;
+  background-color: MediumSpringGreen;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #DCE0E0;
+  border-width: 1px;
+}
+
+.reservation-circle-decline{
+  margin-left: 25%;
+  background-color: #FF5A5F;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #DCE0E0;
+  border-width: 1px;
+  margin-bottom: 10%;
+}
+
+.reservation-circle-pending{
+  margin-left: 25%;
+  background-color: #DCE0E0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #DCE0E0;
+  border-width: 1px;
+}
+
+.reservation-description{
+  padding-bottom: 22%;
+}
