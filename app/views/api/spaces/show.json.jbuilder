@@ -12,3 +12,7 @@ json.review @space.reviews do |review|
     json.author_avatar review.author.avatar.url(:small)
   end
 end
+
+json.bookings @space.bookings.where('status = ?', 'APPROVED') do |booking|
+  json.extract! booking, :id, :check_in, :check_out
+end

@@ -19,9 +19,9 @@
             <li>
                 <a href="#/requests/<%= current_user.id %>">
                     Requests
-                    <% unless current_user.bookings.empty? %>
+                    <% unless current_user.bookings.where('status = ?', 'PENDING').empty? %>
                       <div class='notification'>
-                        <%= current_user.bookings.length %>
+                        <%= current_user.bookings.where('status = ?', 'PENDING').length %>
                       </div>
                     <% end %>
                 </a>

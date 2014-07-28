@@ -7,11 +7,22 @@ HeirBnb.Models.Space = Backbone.Model.extend({
     return this._reviews;
   },
 
+  bookings: function (){
+    this._bookings = this._bookings ||
+        new HeirBnb.Collections.Bookings([], {space: this});
+    return this._bookings;
+  },
+
   parse: function (payload) {
 
     if (payload.review){
       this.reviews().set(payload.review, { parse: true });
       delete payload.reviews;
+    }
+
+    if (payload.bookings){
+      this.bookings().set(payload.bookings, { parse: true });
+      delete payload.bookings;
     }
     this.set('user_name', payload.user_name, {parse: true});
     this.set('user_id', payload.user_id, {parse: true});

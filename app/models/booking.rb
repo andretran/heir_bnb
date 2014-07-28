@@ -17,8 +17,8 @@ class Booking < ActiveRecord::Base
 
   validates :check_in, :check_out, :space_id, :user_id, :status, presence: true
   validates :status, inclusion: STATUS_STATES
-  before_save :does_not_overlap_approved_booking
-  before_save :check_in_before_check_out
+  validate :does_not_overlap_approved_booking
+  validate :check_in_before_check_out
 
   belongs_to :user
   belongs_to :space
@@ -76,7 +76,7 @@ class Booking < ActiveRecord::Base
     return if self.denied?
 
     unless overlapping_approved_bookings.empty?
-      errors[:base] << "Those dates are not available"
+      errors[:base] << "Someone already booked those dates"
     end
   end
 

@@ -6,7 +6,7 @@ module Api
       if @booking.save
         render json: @booking
       else
-        render json: {error_message: @booking.errors.full_messages}, status: :unprocessable_entity
+        render json: @booking.errors.full_messages, status: :unprocessable_entity
       end
     end
 
@@ -14,6 +14,18 @@ module Api
       @booking = Booking.find(params[:id])
       @booking.try(:destroy)
       render json: {}
+    end
+
+    def accept
+      @booking = Booking.find(params[:id])
+      @booking.approve!
+      render json: @booking
+    end
+
+    def decline
+      @booking = Booking.find(params[:id])
+      @booking.deny!
+      render json: @booking
     end
 
     # def update

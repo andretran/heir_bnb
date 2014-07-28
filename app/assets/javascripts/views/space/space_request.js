@@ -7,12 +7,26 @@ HeirBnb.Views.SpaceRequest = Backbone.View.extend({
     'click .decline-button' : 'decline'
   },
 
-  accept : function (){
-
+  accept : function (event){
+    var that = this;
+    $.ajax({
+      url : 'api/bookings/accept/' + this.model.id,
+      type : 'put',
+      success : function () {
+        that.model.trigger('change', that.model);
+      }
+    });
   },
 
-  decline : function (){
-
+  decline : function (event){
+    var that = this;
+    $.ajax({
+      url : 'api/bookings/decline/' + this.model.id,
+      type : 'put',
+      success : function () {
+        that.model.trigger('change', that.model);
+      }
+    });
   },
 
   render: function () {

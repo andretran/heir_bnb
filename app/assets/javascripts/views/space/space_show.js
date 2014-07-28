@@ -24,9 +24,13 @@ HeirBnb.Views.SpaceShow = Backbone.CompositeView.extend({
       },
 
       error : function (model, resp) {
-        $('.booking-form').prepend(
-          "<div class='alert alert-danger'>Make sure to fill in all the fields!</div>"
+        $('.errors').empty();
+        _.each(resp.responseJSON.reverse(), function(error){
+          $('.errors').prepend(
+            "<div class='alert alert-danger'>" +
+            error + "</div>"
           );
+        });
       }
     });
   },
@@ -49,7 +53,10 @@ HeirBnb.Views.SpaceShow = Backbone.CompositeView.extend({
     });
 
     var newBooking = new HeirBnb.Models.Booking();
-    this.addSubview('.booking-form', new HeirBnb.Views.BookingNew({ model: newBooking }));
+    this.addSubview('.booking-form', new HeirBnb.Views.BookingNew({
+      model: newBooking,
+      collection: that.model.bookings()
+    }));
 
     return this;
   }
