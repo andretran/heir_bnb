@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727072910) do
+ActiveRecord::Schema.define(version: 20140728001053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
-    t.string   "space_id",   null: false
     t.string   "status",     null: false
     t.date     "check_in",   null: false
     t.date     "check_out",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "space_id"
   end
 
   create_table "reviews", force: true do |t|

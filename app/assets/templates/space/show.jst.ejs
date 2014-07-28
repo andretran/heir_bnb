@@ -8,6 +8,14 @@
   <div class='title-header'>
     <h1 id='space-title'> <%= space.get('title') %> </h1>
   </div>
+
+  <div class='affix' id='right-info-box'>
+      <div class='price-box'>
+        <%= "$ " + space.escape("price")  %>
+      </div>
+      <div class='booking-form'>
+      </div>
+  </div>
 </div>
 
 <div style='background: #F5F5F5'>
@@ -40,13 +48,7 @@
 
       </div>
 
-      <div class='col-xs-5 affix' id='right-info-box'>
-          <div class='price-box'>
-            <%= "$ " + space.escape("price")  %>
-          </div>
-          <div class='review-form'>
-          </div>
-      </div>
+
     </div>
   </div>
 </div>

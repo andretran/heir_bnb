@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrapValidator
+//= require moment
+//= require bootstrap-datetimepicker
 //= require underscore
 //= require backbone
 //= require heir_bnb

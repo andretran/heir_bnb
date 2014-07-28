@@ -19,6 +19,8 @@ gem 'backbone-on-rails'
 gem "paperclip"
 gem "aws-sdk"
 gem 'figaro', '~> 1.0.0.rc1'
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

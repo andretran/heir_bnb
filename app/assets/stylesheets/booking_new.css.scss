@@ -11,6 +11,21 @@
   font-size: 16px;
 }
 
+.pending-request-button{
+  background-color: MediumSpringGreen;
+  border-style: solid;
+  border-color: MediumSpringGreen;
+  border-radius: 2px;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 84%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 16px;
+  display: inline-block;
+}
+
 .booking-form-input {
   border-radius: 2px;
   border-style: solid;
@@ -21,6 +36,7 @@
   text-align: center;
   height: 40px;
   font-size: 13px;
+  color: #5B5F61;
 }
 
 .input-group{
@@ -32,4 +48,22 @@
   font-weight: normal;
   display: block;
   text-align: left;
+}
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}
+
+input::-webkit-inner-spin-button{
+    display: none;
+}
+
+.bootstrap-datetimepicker-widget td.active{
+  background-color: #FF5A5F;
+  border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget td.active:hover{
+  background-color: #FF5A5F;
 }
