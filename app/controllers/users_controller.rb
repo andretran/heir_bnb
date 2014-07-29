@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       sign_in!(@user)
       redirect_to root_url
     else
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:errors] = ['Please make sure to fill in all the fields.']
       render :new
     end
   end

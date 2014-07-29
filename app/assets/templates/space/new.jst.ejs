@@ -1,12 +1,16 @@
+<div class='form-errors'></div>
+
+
 <form enctype="multipart/form-data">
   <div class='form-group'>
     <label>
         Title
       <input
-        class='form-control'
         type='text'
+        class='form-control'
         name='space[title]'
-        value='<%= space.escape("title") %>'>
+        value='<%= space.escape("title") %>'
+        data-validation="required">
     </label>
   </div>
   <div class='form-group'>

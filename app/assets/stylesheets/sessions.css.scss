@@ -34,62 +34,78 @@ body.splash {
   height: 500px;
 
 
-  padding: 50px;
+  padding: 30px;
+  padding-top: 5%;
   width: 450px;
   text-align: center;
-  background-color: rgba(255,255,255, 0.90);
+  background-color: rgba(255,255,255, 0.95);
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
+#auth-form{
+  left: 20%;
+}
+
+::-webkit-input-placeholder {
+   color: #c4c4c4;
+}
+
+
 .auth-input {
+  margin-bottom: 5px;
   display: block;
   width: 100%;
   padding: 10px;
-  margin: 5px;
-  font-size: 30px;
+  font-size: 20px;
+  height: 20%;
   line-height: 1.428571429;
-  color: #555555;
+  color: #AEA9A9;
   vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  border-width: 1px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #E0E2DF;
 }
 
 .auth-input:focus {
-  border-color: #66afe9;
+  border-color: #FFB400;
+  background-color: #FFF8E5;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 .auth-button {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   border-style: solid;
-  padding: 10px;
-  padding-left: 100px;
-  padding-right: 100px;
-  background-color: CornflowerBlue;
-  border-color: CornflowerBlue;
-  border-radius: 4px;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  height: 20%;
+  text-align: center;
+  padding-left: 40%;
+  padding-right: 39%;
+  margin-bottom: 2%;
+  background-color: #FF6065;
+  border-color: #FF6065;
+  border-radius: 2px;
 
 }
 
 .signup-button{
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   border-style: solid;
-  padding: 10px;
-  padding-left: 92px;
-  padding-right: 93px;
-  background-color: CornflowerBlue;
-  border-color: CornflowerBlue;
-  border-radius: 4px;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  height: 20%;
+  text-align: center;
+  padding-left: 38%;
+  padding-right: 38%;
+  background-color: #FF6065;
+  border-color: #FF6065;
+  border-radius: 2px;
 }
 
 .SignUp{
@@ -102,14 +118,15 @@ hr {
 
 .guest-button {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   border-style: solid;
-  margin: 10px;
-  padding: 10px;
-  padding-left: 65px;
-  padding-right: 65px;
-  background-color: #FF7740;
-  border-color: #FF7740;
-  border-radius: 4px;
-
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  height: 20%;
+  text-align: center;
+  padding-left: 32%;
+  padding-right: 32%;
+  background-color: MediumSpringGreen;
+  border-color: MediumSpringGreen;
+  border-radius: 2px;
 }

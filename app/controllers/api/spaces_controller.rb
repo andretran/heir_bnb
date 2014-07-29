@@ -6,7 +6,7 @@ module Api
       if @space.save
         render json: @space
       else
-        render json: @space.errors.full_messages, status: :unprocessable_entity
+        render json: ['One or more frields are empty, please check again.'] , status: :unprocessable_entity
       end
     end
 
@@ -15,7 +15,7 @@ module Api
       @space.try(:destroy)
       render json: {}
     end
-    
+
     def index
       @spaces = Space.all
       render :index

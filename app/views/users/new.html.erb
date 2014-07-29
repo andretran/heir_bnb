@@ -11,6 +11,11 @@
         <input name="user[email]" type="text" placeholder='Email Address' class='auth-input'>
         <input name="user[password]" type="password" placeholder='Password' class='auth-input'>
       </div>
+
+      <% if flash.now[:errors] %>
+        <div class='alert alert-danger' role='alert'><%= flash.now[:errors].first %></div>
+      <% end %>
+      
       <input type="submit" value="Sign Up" class="signup-button">
     </form>
 

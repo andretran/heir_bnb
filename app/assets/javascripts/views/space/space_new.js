@@ -11,6 +11,7 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template({ space: this.model });
     this.$el.html(renderedContent);
+    this.applyValidators;
     return this;
   },
 
@@ -18,8 +19,30 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
     var view = this;
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON()['space'];
-    this.handle_files(document.getElementById("images").files, params);
+    if (document.getElementById("images").files.length > 0){
+      this.handle_files(document.getElementById("images").files, params);
+    } else{
+      this.saveModel(params);
+    }
 
+  },
+
+  saveModel : function (params){
+    this.model.save(params, {
+      success: function () {
+        HeirBnb.spaces.add(that.model);
+        Backbone.history.navigate("", { trigger: true });
+      },
+      error: function (model, resp){
+        $('.form-errors').empty();
+        _.each(resp.responseJSON.reverse(), function(error){
+          $('.form-errors').prepend(
+            "<div class='alert alert-danger'>" +
+            error + "</div>"
+          );
+        });
+      }
+    });
   },
 
   handle_files : function(files, params) {
@@ -30,12 +53,7 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
   reader.onload = function(e) {
     params.photo_preview = this.result;
     params.filename = file.name;
-    that.model.save(params, {
-      success: function () {
-        HeirBnb.spaces.add(that.model);
-        Backbone.history.navigate("", { trigger: true });
-      }
-    });
+    that.saveModel(params);
     // you need to send e.target.result in your $.ajax request
   }
   reader.readAsDataURL(file);
