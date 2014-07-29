@@ -1,9 +1,11 @@
-json.(@user, :id, :first_name, :last_name)
+json.(@user, :id, :first_name, :last_name, :location, :description)
 json.avatar(@user.avatar.url(:big))
 
 json.review @user.reviews do |review|
   json.extract! review, :id, :text
   json.author do
+    json.id review.author.id
+    json.author_name review.author.first_name
     json.author_avatar review.author.avatar.url(:small)
   end
 end

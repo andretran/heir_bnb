@@ -1,0 +1,109 @@
+.user-show-name{
+  font-size: 40px;
+  color: #565A5C;
+}
+
+.user-show-location{
+  margin-top: 0.5%;
+  font-size: 15px;
+  color: #565A5C;
+  font-weight: bold;
+}
+
+.user-show-description{
+  color: #565A5C;
+  width: 90%;
+}
+
+.user-listing-image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.user-show-listings{
+  margin-top: 1%;
+}
+
+.user-listings-title{
+  font-size: 28px;
+  color: #565A5C;
+}
+
+.user-reviews-title{
+  font-size: 28px;
+  color: #565A5C;
+}
+
+.user-listing-space-title{
+  top: 65%;
+  position: absolute;
+  z-index: 2;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+  width: 160px;
+  color: white;
+  background-color: rgba(78, 78, 76, 0.85);
+  border-radius: 2px;
+}
+
+.users-reviews-banner{
+  background-color: #F5F5F5;
+  padding-top: 2.5%;
+  padding-left: 17%;
+  border-color: #DCE0E0;
+  border-top-style: solid;
+  border-width: 1px;
+  padding-bottom: 3%;
+}
+
+.user-reviews-box{
+  padding-left: 8%;
+}
+
+.user-listing-link:hover{
+  text-decoration: none;
+}
+
+.user-listing-image-container{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.user-show-banner{
+  padding-bottom: 2%;
+  left: 30%
+}
+
+.edit-profile-button{
+  margin-top: 5%;
+  font-size: 20px;
+  padding-left: 26%;
+  padding-right: 26%;
+  border-style: solid;
+  border-radius: 2px;
+  color: white;
+  border-color: #FF5A5F;
+  background-color: #FF5A5F;
+}
+
+.left-user-show{
+  padding: 0px;
+  text-align: center;
+  width: 20%;
+  z-index: 3;
+}
+
+.user-reviews-box{
+  .review-text{
+      width: 80%;
+      padding-left: 4%;
+  }
+}
+
+.user-reviews-box{
+  .review-show{
+    margin-left: 3%;
+  }
+}

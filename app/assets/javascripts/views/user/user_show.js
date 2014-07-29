@@ -1,5 +1,6 @@
 HeirBnb.Views.UserShow = Backbone.CompositeView.extend({
   template :  JST['user/show'],
+  classname: 'col-xs-12 container-full user-show-container',
 
   initialize : function (){
     this.listenTo(this.model, 'sync', this.render);
@@ -7,7 +8,7 @@ HeirBnb.Views.UserShow = Backbone.CompositeView.extend({
 
   addReview: function (review){
     var reviewShow = new HeirBnb.Views.ReviewShow({ model: review });
-    this.addSubview('#reviews-box', reviewShow);
+    this.addSubview('.user-reviews-box', reviewShow);
   },
 
 
@@ -21,7 +22,7 @@ HeirBnb.Views.UserShow = Backbone.CompositeView.extend({
     });
 
     var editModal = new HeirBnb.Views.UserEdit({ model: this.model });
-    this.addSubview('#edit-button', editModal);
+    this.addSubview(this.$('.left-user-show'), editModal);
     return this;
   }
 });

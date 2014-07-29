@@ -1,6 +1,13 @@
 <a href='#/spaces/<%= space.id %>'>
-  <img src='<%= space.get("photo_url") %>'>
-  <h2> <%= space.escape('title') %> </h2>
+
+  <img src='<%= space.get("photo_url") %>' class='listing-image img-thumbnail'>
+
+  <div class='listing-space-title'>
+    <%= space.escape('title') %>
+  </div>
 </a>
-<a href='#/spaces/edit/<%= space.id %>' class='btn btn-success'>Edit Space</a>
-<button class='btn btn-danger delete-button'> Delete </button>
+
+<div class='listing-button-group'>
+    <a href='#/spaces/edit/<%= space.id %>' class='listing-edit-button'>Edit</a>
+    <button class='listing-delete-button delete-button'> Delete </button>
+</div>

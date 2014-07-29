@@ -14,6 +14,8 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  description         :text
+#  location            :string(255)
 #
 
 class User < ActiveRecord::Base

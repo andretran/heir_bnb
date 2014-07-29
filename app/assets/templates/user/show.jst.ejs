@@ -1,16 +1,52 @@
-<img src='<%= user.escape("avatar_url") %>'>
-<div>
-First Name <%= user.escape('first_name') %>
-</div>
-<div>
-Last Name <%= user.escape('last_name') %>
+<div class='col-xs-3 left-user-show col-xs-offset-1 affix'>
+  <img src='<%= user.escape("avatar_url") %>'>
+
+  <div id='edit-button'>
+    <button class="edit-profile-button" data-toggle="modal" data-target="#editModal">
+      Edit Profile
+    </button>
+  </div>
 </div>
 
-<div id='edit-button'>
-  <button class="btn btn-primary" data-toggle="modal" data-target="#editModal">
-    Edit Profile
-  </button>
+<div class='col-xs-8 user-show-banner'>
+  <div class='user-show-name'>
+   <%= user.escape('first_name') + " " + user.escape('last_name') %>
+  </div>
+
+  <div class='user-show-location'>
+    <%= user.escape('location') %>
+  </div>
+  <div style='white-space: pre-line;' class='user-show-description'>
+     <%= user.escape('description') %>
+  </div>
+
+  <div class='user-show-listings'>
+    <div class='user-listings-title'>Listings</div>
+    <div class='container-full'>
+      <% user.listings().each( function (listing) { %>
+          <div class='col-xs-3 user-listing-image-container'>
+            <a href='#/spaces/<%= listing.id %>' class='user-listing-link'>
+              <img
+                src='<%= listing.get("photo_url") %>'
+                class='user-listing-image'>
+
+              <div class='user-listing-space-title'>
+                <%=listing.escape('title')%>
+              </div>
+            </a>
+          </div>
+      <% }); %>
+    </div>
+  </div>
+
 </div>
 
-<div id='reviews-box'>
-</div>
+<% if (user.reviews().length > 0) { %>
+  <div class='container-full col-xs-12 users-reviews-banner'>
+    <div class='col-xs-11 col-xs-offset-1'>
+      <div class='user-reviews-box container-full'>
+        <div class='user-reviews-title'>Reviews</div>
+      </div>
+    </div>
+  </div>
+<% } %>

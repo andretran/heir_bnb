@@ -3,13 +3,13 @@
 # Table name: bookings
 #
 #  id         :integer          not null, primary key
-#  space_id   :string(255)      not null
 #  status     :string(255)      not null
 #  check_in   :date             not null
 #  check_out  :date             not null
 #  created_at :datetime
 #  updated_at :datetime
 #  user_id    :integer
+#  space_id   :integer
 #
 
 class Booking < ActiveRecord::Base
