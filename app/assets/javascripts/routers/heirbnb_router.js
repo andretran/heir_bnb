@@ -129,8 +129,9 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-
-    this.$rootEl.html(view.render().$el.fadeIn());
+    this.$rootEl.html(view.render().$el.fadeIn(400, function() {
+      view.onRender && view.onRender();
+    }));
   }
 
 });

@@ -13,6 +13,9 @@
 #  photo_preview_content_type :string(255)
 #  photo_preview_file_size    :integer
 #  photo_preview_updated_at   :datetime
+#  location                   :string(255)
+#  longitude                  :decimal(, )
+#  latitude                   :decimal(, )
 #
 
 require 'test_helper'

@@ -10,8 +10,35 @@
 
 }
 
+.space-index-view{
+  height: 100%;
+  position:absolute;
+  top: 10%;
+  bottom: 0;
+}
+
+#map-canvas{
+  position: fixed !important;
+  top: 58px;
+  margin-left: 2%;
+}
+
+.map-container{
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 0;
+  margin-right: 3%;
+}
+
+.index-box{
+  border-color-left: #B9B7B1;
+  border-style-left: solid;
+  padding: 0px;
+  width: 55%;
+}
+
 .image-preview {
-  padding-left: 10px;
 }
 
 .space-title {
