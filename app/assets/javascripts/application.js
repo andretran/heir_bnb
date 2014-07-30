@@ -14,7 +14,9 @@
 //= require jquery.serializejson
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jquery.form-validator.js
+//= require jquery.form-validator
+//= require jquery.autocomplete
+//= require hashes
 //= require bootstrap
 //= require bootstrapValidator
 //= require moment

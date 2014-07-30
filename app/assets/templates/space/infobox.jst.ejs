@@ -1,0 +1,13 @@
+<div class='info-box'>
+  <a href='#/spaces/<%= space.id %>'>
+    <div class='info-box-imagebox'>
+      <img src='<%= space.escape("photo_url") %>' class='info-box-image'>
+    </div>
+    <div class=info-box-price>
+      <%=  "$" + space.escape('price') %>
+    </div>
+  </a>
+    <div class='info-box-title'>
+      <%= space.escape('title') %>
+    </div>
+</div>

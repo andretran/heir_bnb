@@ -1,6 +1,15 @@
 HeirBnb.Views.SpacesIndex = Backbone.View.extend({
   template: JST['space/index'],
-  className: 'container-full space-index-view',
+  className: 'container-full space-index-view clearfix',
+  places: {
+    "King's Landing, Westeros": [-40.029296875 ,-60.46066995149529],
+    "Casterly Rock, Westeros": [-30.029296875 ,-120.46066995149529],
+    "Crossroads Inn, Westeros": [-0.029296875 ,-80.46066995149529],
+    "Winterfell, Westeros" : [60.029296875 ,-90.46066995149529],
+    "Castle Black, Westeros" : [80.029296875 ,-70.46066995149529],
+    "Highgarden, Westeros" : [-68.029296875 ,-120.46066995149529],
+    "Pentos, Essos" : [-40.029296875 ,-5.46066995149529]
+  },
 
 
   initialize: function () {
@@ -8,9 +17,14 @@ HeirBnb.Views.SpacesIndex = Backbone.View.extend({
   },
 
   initializeMap: function ($mapCanvas) {
+    if (this.collection.length > 0 ){
+      var centerCoords = this.places[this.collection.first().get('location')];
+    } else{
+      var centerCoords = [-40.029296875 ,-60.46066995149529];
+    }
     var mapOptions = {
       zoom: 3,
-      center: new google.maps.LatLng(-34.397, -80),
+      center: new google.maps.LatLng(centerCoords[0], centerCoords[1]),
       streetViewControl: false,
       mapTypeControlOptions: {
         mapTypeIds: ["westeros"]
@@ -60,10 +74,9 @@ HeirBnb.Views.SpacesIndex = Backbone.View.extend({
         animation: google.maps.Animation.DROP
     });
 
-    var contentString = '<div> <img class="img-thumbnail" src=' + space.escape('photo_url') + '>' +
-                        space.escape('title') + '</div>'
+    var infoBoxContent = JST['space/infobox']({ space : space });
     var infowindow = new google.maps.InfoWindow({
-      content: contentString
+      content: infoBoxContent
     });
 
 

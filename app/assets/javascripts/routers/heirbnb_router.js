@@ -11,7 +11,8 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
     'profile/:id' : 'showProfile',
     'listings/:id' : 'listings',
     'reservations/:id' : 'reservations',
-    'requests/:id' : 'requests'
+    'requests/:id' : 'requests',
+    'search(/:place)' : 'search'
   },
 
   edit: function (id) {
@@ -28,15 +29,11 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
 
   index: function () {
     var that = this;
-
-    // var container = $('<div class=container></div>')
-
     HeirBnb.spaces.fetch({
       success: function () {
         var indexView = new HeirBnb.Views.SpacesIndex({
           collection : HeirBnb.spaces
         });
-        // container.htm(in)
         that._swapView(indexView);
       }
     });
@@ -51,6 +48,13 @@ HeirBnb.Routers.Spaces = Backbone.Router.extend({
         that._swapView(listingView);
       }
     });
+  },
+
+  search: function (){
+    var indexView = new HeirBnb.Views.SpacesIndex({
+      collection : HeirBnb.searchQuery
+    });
+    this._swapView(indexView);
   },
 
   reservations: function (id){

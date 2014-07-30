@@ -10,10 +10,33 @@
 
 }
 
+.info-box-image{
+  width: 250px;
+  height: 150px;
+}
+
+.info-box-title{
+  color: #565A5C;
+  font-size: 20px;
+}
+
+.info-box-price{
+  position: absolute;
+  z-index: 3;
+  top: 60%;
+  left: 2%;
+  font-size: 20px;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: rgba(54, 56, 57, 0.85);
+  color: white;
+}
+
 .space-index-view{
   height: 100%;
   position:absolute;
   top: 10%;
+  width: 100%;
   bottom: 0;
 }
 

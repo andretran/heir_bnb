@@ -28,10 +28,11 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
   },
 
   saveModel : function (params){
+    var that = this;
     this.model.save(params, {
       success: function () {
         HeirBnb.spaces.add(that.model);
-        Backbone.history.navigate("", { trigger: true });
+        Backbone.history.navigate("spaces/" + that.model.id , { trigger: true });
       },
       error: function (model, resp){
         $('.form-errors').empty();
