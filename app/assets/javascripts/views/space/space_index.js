@@ -41,17 +41,34 @@ HeirBnb.Views.SpacesIndex = Backbone.View.extend({
     this.map.mapTypes.set('westeros', westerosMapType);
     this.map.setMapTypeId('westeros');
 
-    google.maps.event.addListener(this.map, 'click', function(event) {
-       that.placeMarker(event.latLng);
-       console.log(event.latLng);
+
+    HeirBnb.spaces.each (function (space){
+      var space_coord = new google.maps.LatLng(space.get('latitude'), space.get('longitude'));
+      that.placeMarker(space_coord, space);
     });
+    // google.maps.event.addListener(this.map, 'click', function(event) {
+    //    that.placeMarker(event.latLng);
+    //    console.log(event.latLng);
+    // });
 
   },
 
-  placeMarker: function(location){
+  placeMarker: function(location, space){
     var marker = new google.maps.Marker({
         position: location,
-        map: this.map
+        map: this.map,
+        animation: google.maps.Animation.DROP
+    });
+
+    var contentString = '<div> <img class="img-thumbnail" src=' + space.escape('photo_url') + '>' +
+                        space.escape('title') + '</div>'
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+
+    google.maps.event.addListener(marker, 'click', function (){
+      infowindow.open(this.map,marker);
     });
   },
 

@@ -6,7 +6,10 @@
     <%= space.escape("user_name") %>
   </div>
   <div class='title-header'>
-    <h1 id='space-title'> <%= space.get('title') %> </h1>
+    <h1 id='space-title'> <%= space.escape('title') %> </h1>
+  </div>
+  <div class='space-show-location'>
+    <%= space.escape('location') %>
   </div>
 
   <div class='affix' id='right-info-box'>

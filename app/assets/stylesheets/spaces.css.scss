@@ -29,26 +29,46 @@
   height: 100%;
   padding: 0;
   margin-right: 3%;
+  left: -3%;
 }
 
 .index-box{
-  border-color-left: #B9B7B1;
-  border-style-left: solid;
   padding: 0px;
+  left: -2%;
   width: 55%;
 }
 
 .image-preview {
+  margin-bottom: 5%;
 }
 
 .space-title {
-  color: #818485;
-  font-size: 18px;
+  padding-left: 5%;
+  padding-top: 2%;
+  color: #565A5C;
+  font-size: 21px;
   display: inline-block;
   white-space: nowrap;
   overflow: auto;
   text-overflow: ellipsis;
   width: 300px;
+}
+
+.space-location {
+  z-index: 2;
+  position: absolute;
+  top: 97%;
+  left: 10%;
+  color: #818485;
+  font-size: 15px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+.space-location:hover{
+  text-decoration: none;
 }
 
 .price-tag {
