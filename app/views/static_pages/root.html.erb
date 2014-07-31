@@ -1,4 +1,7 @@
 <%= render partial: "layouts/header" %>
 
 <div id="main" class="container-full"></div>
-<script>$(HeirBnb.initialize);</script>
+<script>
+HeirBnb.currentUser = <%= current_user.id %>
+$(HeirBnb.initialize);
+</script>

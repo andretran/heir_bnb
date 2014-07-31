@@ -5,6 +5,16 @@ window.HeirBnb = {
   Routers: {},
   initialize: function() {
     HeirBnb.spaces = new HeirBnb.Collections.Spaces();
+    HeirBnb.userBookings = new HeirBnb.Collections.Bookings();
+    HeirBnb.userBookings.fetch();
+    HeirBnb.userBookings.on('change sync', function() {
+      $('.notifications').remove();
+      if (HeirBnb.userBookings.length > 0){
+        $('.navbar-requests').append(
+          "<div class='notification'>" + HeirBnb.userBookings.length + "</div>");
+      }
+    });
+
 
     new HeirBnb.Routers.Spaces({
         '$rootEl' : $('#main')

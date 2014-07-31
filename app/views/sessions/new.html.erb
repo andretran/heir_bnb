@@ -1,6 +1,7 @@
 <div id='auth-body'>
-  <div id='auth-form'>
+  <%= image_tag('heirbnb-logo.png',class:'heirbnb-logo-big') %>
 
+  <div id='auth-form' class='auth-form-session'>
     <form action="/session" method="post">
 
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

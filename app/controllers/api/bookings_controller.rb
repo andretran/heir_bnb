@@ -28,9 +28,11 @@ module Api
       render json: @booking
     end
 
-    # def update
-    # end
-
+    def index
+      @bookings = current_user.requests.where('status = ?', 'PENDING')
+      render json: @bookings
+    end
+    
     private
 
     def current_space

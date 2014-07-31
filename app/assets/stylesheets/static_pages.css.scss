@@ -9,6 +9,23 @@
   color: white;
 }
 
+.navbar-header{
+  width: 8%;
+}
+
+.navbar-brand{
+
+}
+
+.heirbnb-logo-bar{
+  z-index: 2;
+  position: absolute;
+  margin-right: 20px;
+  width: 10%;
+  height: 100%;
+  top: -10%;
+}
+
 #search-bar{
   border-style: solid;
   border-color: #DCE0E0;

@@ -1,40 +1,52 @@
+
+<div class='space-form-box'>
 <div class='form-errors'></div>
-
-
 <form enctype="multipart/form-data">
   <div class='form-group'>
-    <label>
+    <label class='space-input-header'>
         Title
       <input
         type='text'
-        class='form-control'
+        class='form-control space-new-input'
         name='space[title]'
         value='<%= space.escape("title") %>'
         data-validation="required">
     </label>
   </div>
   <div class='form-group'>
-    <label>
+    <label class='space-input-header'>
       Description
       <textarea
-        class='form-control'
+        class='form-control space-new-input'
         rows='8'
         cols='50'
         name='space[description]'><%= space.escape("description") %></textarea>
     </label>
   </div>
   <div class='form-group input-large'>
-    <label>
+    <label class='space-input-header'>
       Price
     <input
       type='number'
-      class='form-control'
+      class='form-control space-new-input'
       name='space[price]'
       value='<%= space.escape("price") %>'>
     </label>
+    <label class='space-input-header'>
+      Location
+    <select class='form-control' name='space[location]'>
+      <option value="King's Landing, Westeros">King's Landing, Westeros</option>
+      <option value="Winterfell, Westeros">Winterfell, Westeros</option>
+      <option value="Castle Black, Westeros">Castle Black, Westeros</option>
+      <option value="Casterly Rock, Westeros">Casterly Rock, Westeros</option>
+      <option value="Crossroads Inn, Westeros">Crossroads Inn, Westeros</option>
+      <option value="Highgarden, Westeros">Highgarden, Westeros</option>
+      <option value="Pentos, Essos">Pentos, Essos</option>
+    </select>
+    </label>
   </div>
   <div class='form-group'>
-    <label>
+    <label class='space-input-header'>
       Cover Photo
       <input
         type='file'
@@ -45,8 +57,9 @@
   </div>
 
   <% if (space.isNew()){  %>
-    <button type='submit' class='btn btn-primary'>Create</button>
+    <button type='submit' class='btn btn-primary space-new-button'>Create</button>
   <%} else{  %>
-    <button type='submit' class='btn btn-primary'>Save</button>
+    <button type='submit' class='btn btn-primary space-new-button'>Save</button>
   <% } %>
 </form>
+</div>

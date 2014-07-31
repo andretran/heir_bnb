@@ -1,5 +1,6 @@
 HeirBnb.Views.SpaceNew = Backbone.View.extend({
   template: JST['space/new'],
+  className:'space-new-form',
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },

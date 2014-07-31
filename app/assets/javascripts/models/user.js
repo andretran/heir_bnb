@@ -33,6 +33,7 @@ HeirBnb.Models.User = Backbone.Model.extend({
 
     if (payload.requests){
       this.requests().set(payload.requests, { parse : true });
+      HeirBnb.userBookings.set(payload.requests, { parse : true });
       delete payload.requests;
     }
 

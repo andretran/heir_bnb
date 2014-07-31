@@ -6,9 +6,9 @@ HeirBnb::Application.routes.draw do
 
     namespace :api, defaults: {format: :json} do
       resources :spaces
-      resources :bookings, only: [:create, :update, :destroy]
+      resources :bookings, only: [:create, :update, :destroy, :index]
       put 'bookings/accept/:id' => 'bookings#accept'
       put 'bookings/decline/:id' => 'bookings#decline'
-      resources :reviews, only: [:create, :update, :destroy] 
+      resources :reviews, only: [:create, :update, :destroy]
     end
 end

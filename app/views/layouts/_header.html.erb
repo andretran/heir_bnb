@@ -1,7 +1,9 @@
 <nav class='navbar navbar-default affix' style='width: 100%; z-index: 100' role='navigation'>
   <div class='container-fluid'>
     <div class='navbar-header'>
-      <a class="navbar-brand" href=''>Home</a>
+      <a class="navbar-brand" href=''>
+        <%= image_tag('heirbnb-logo.png',class:'heirbnb-logo-bar') %>
+      </a>
     </div>
 
     <div class='collapse navbar-collapse'>
@@ -25,7 +27,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/profile/<%= current_user.id %>">Profile</a></li>
             <li>
-                <a href="#/requests/<%= current_user.id %>">
+                <a href="#/requests/<%= current_user.id %>" class='navbar-requests'>
                     Requests
                     <% unless current_user.bookings.where('status = ?', 'PENDING').empty? %>
                       <div class='notification'>

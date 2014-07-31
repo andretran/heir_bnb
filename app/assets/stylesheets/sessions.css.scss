@@ -24,6 +24,17 @@ body.splash {
   -webkit-align-items: center;
 }
 
+.heirbnb-logo-big{
+  position: absolute;
+  z-index: 2;
+  left: 8%;
+  top: 5%;
+}
+
+.auth-form-session{
+  padding-top: 30%;
+}
+
 #auth-body {
   //vertical aligning
   top: 50%;
