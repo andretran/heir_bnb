@@ -1,4 +1,4 @@
-json.(space, :id, :title, :description, :price, :created_at, :location, :updated_at, :latitude, :longitude)
+json.(space, :id, :title, :description, :price, :created_at, :location, :about, :updated_at, :latitude, :longitude)
 json.cover_photo(space.photo_preview.url(:small))
 json.user_avatar(space.user.avatar.url(:small))
 #

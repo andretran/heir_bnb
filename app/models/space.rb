@@ -29,7 +29,7 @@ class Space < ActiveRecord::Base
                   "Pentos, Essos" => [16.962890625, -37.85750715625204],
                   "Highgarden, Westeros" => [-124.189453125, -62.91523303947613]}
 
-  validates :title, :description, :price, :user_id, :location,
+  validates :title, :description, :price, :user_id, :location, :about,
               :latitude, :longitude, presence: true
   validates :location, inclusion: LOCATIONS.keys
 

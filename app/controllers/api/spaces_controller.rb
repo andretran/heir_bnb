@@ -1,6 +1,6 @@
 module Api
   class SpacesController < ApiController
-    wrap_parameters include: [:photo_preview, :title, :description, :price, :filename, :location]
+    wrap_parameters include: [:photo_preview, :title, :description, :price, :filename, :about, :location]
     def create
       @space = current_user.spaces.new(space_params)
       if @space.save
@@ -44,7 +44,7 @@ module Api
     private
 
     def space_params
-      params.require(:space).permit(:title, :description, :price, :photo_preview, :filename, :location)
+      params.require(:space).permit(:title, :description, :price, :photo_preview, :filename, :about, :location)
     end
   end
 end

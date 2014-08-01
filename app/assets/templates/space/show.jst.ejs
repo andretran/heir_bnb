@@ -28,12 +28,7 @@
 
         <div class='content'>
           <h3> About This Listing </h3>
-
-          This is a great private room in my full
-          floor flat on the 2nd floor of a beautiful
-          Williamsburg townhome. The apartment is central
-          to all that williamsburg has to offer. JMZ and L
-          trains are all one stop away from Manhattan!
+          <%= space.escape('about') %>
         </div>
 
         <img src='<%= space.get("photo_url") %>' class='show-image'>
