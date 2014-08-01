@@ -38,18 +38,6 @@ HeirBnb.Views.UserShow = Backbone.CompositeView.extend({
         this.$('#editModal').css("visibility", "hidden");
         $('.modal-backdrop').remove();
         $('body').removeClass('modal-open');
-        alert('workgin1');
-      },
-      error: function (model, resp){
-        this.$('#editModal').modal('hide');
-        debugger;
-        // $('.form-errors').empty();
-        // _.each(resp.responseJSON.reverse(), function(error){
-        //   $('.form-errors').prepend(
-        //     "<div class='alert alert-danger'>" +
-        //     error + "</div>"
-        //   );
-        // });
       }
     });
   },
