@@ -9,9 +9,9 @@ window.HeirBnb = {
     HeirBnb.userBookings.fetch();
     HeirBnb.userBookings.on('change sync', function() {
       $('.notifications').remove();
-      if (HeirBnb.userBookings.length > 0){
+      if (HeirBnb.userBookings.where({status: 'PENDING'}).length > 0){
         $('.navbar-requests').append(
-          "<div class='notification'>" + HeirBnb.userBookings.length + "</div>");
+          "<div class='notification'>" + HeirBnb.userBookings.where({status: 'PENDING'}).length + "</div>");
       }
     });
 
