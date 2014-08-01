@@ -1,11 +1,12 @@
 <div class='col-xs-3 left-user-show col-xs-offset-1 affix'>
   <img src='<%= user.escape("avatar_url") %>'>
-
-  <div id='edit-button'>
-    <button class="edit-profile-button">
-      Edit Profile
-    </button>
-  </div>
+  <% if (HeirBnb.currentUser === user.id) { %>
+    <div id='edit-button'>
+      <button class="edit-profile-button">
+        Edit Profile
+      </button>
+    </div>
+  <% } %>
 </div>
 
 <div class='col-xs-8 user-show-banner'>
