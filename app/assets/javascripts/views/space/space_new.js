@@ -19,6 +19,9 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
   submit : function(event){
     var view = this;
     event.preventDefault();
+    var button = $('.space-new-button');
+    button.prop('disabled', true);
+    button.html('Loading...');
     var params = $(event.currentTarget).serializeJSON()['space'];
     if (document.getElementById("images").files.length > 0){
       this.handle_files(document.getElementById("images").files, params);
@@ -36,6 +39,9 @@ HeirBnb.Views.SpaceNew = Backbone.View.extend({
         Backbone.history.navigate("spaces/" + that.model.id , { trigger: true });
       },
       error: function (model, resp){
+        var button = $('.space-new-button');
+        button.prop('disabled', false);
+        button.html('Create');
         $('.form-errors').empty();
         _.each(resp.responseJSON.reverse(), function(error){
           $('.form-errors').prepend(

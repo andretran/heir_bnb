@@ -1,22 +1,21 @@
 .owner-name{
-  z-index: 2;
-  position: absolute;
-  text-align: center;
+  margin-top: 8%;
   display: inline-block;
-  width: 100px;
-  left: 14.5%;
-  top: 29%;
   color: #82888A;
+  font-size: 0.9vw;
 }
 
 .owner-avatar{
   display: block;
-  z-index: 1;
-  position: absolute;
-  left: 15%;
-  top: 15%;
+  width: 100%;
 }
+//
 
+.space-right{
+  position: relative;
+  top: 25%;
+  transform: translateY(-50%);
+}
 .title-header{
   z-index: 3;
   position: absolute;
@@ -26,16 +25,19 @@
 }
 
 #space-title{
-  font-size: 24px;
+  font-size: 1.4vw;
   color: #82888A;
-  margin-bottom: 4%;
+  // margin-bottom: 4%;
 }
 
 .space-banner{
-  height: 150px;
+  height: 23vh;
+  padding-top: 2%;
   border-color: #DCE0E0;
   border-bottom-style: solid;
   border-width: 1px;
+  position: relative;
+  top: 50%;
 }
 
 .content{
@@ -58,8 +60,8 @@
 }
 
 .space-show-location{
-  margin-left: 25.5%;
   color: #B7BBBC;
+  font-size: 0.8vw;
 }
 
 .booking-form{
@@ -78,7 +80,7 @@
 }
 
 #left-info-box{
-  padding-left: 16%;
+  // padding-left: 16%;
 }
 
 .review-divider{

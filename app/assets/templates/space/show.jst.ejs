@@ -1,15 +1,19 @@
-<div class='space-banner'>
-  <a href='#/profile/<%= space.escape("user_id") %>'>
-      <img src='<%= space.get("user_avatar") %>' class='img-circle owner-avatar'>
-  </a>
-  <div class='owner-name'>
-    <%= space.escape("user_name") %>
+<div class='space-banner container-full'>
+  <div class='col-xs-1 col-xs-offset-2' style='text-align:center'>
+    <a href='#/profile/<%= space.escape("user_id") %>'>
+        <img src='<%= space.get("user_avatar") %>' class='img-circle owner-avatar'>
+        <div class='owner-name'>
+          <%= space.escape("user_name") %>
+        </div>
+    </a>
   </div>
-  <div class='title-header'>
-    <h1 id='space-title'> <%= space.escape('title') %> </h1>
-  </div>
-  <div class='space-show-location'>
-    <%= space.escape('location') %>
+  <div class='col-xs-4 space-right'>
+    <div clss='title-header'>
+      <h1 id='space-title'> <%= space.escape('title') %> </h1>
+    </div>
+    <div class='space-show-location'>
+      <%= space.escape('location') %>
+    </div>
   </div>
 
   <div class='affix' id='right-info-box'>
@@ -24,7 +28,7 @@
 <div style='background: #F5F5F5'>
   <div class='container-full'>
     <div class='row'>
-      <div class='col-xs-7' id='left-info-box'>
+      <div class='col-xs-5 col-xs-offset-2' id='left-info-box'>
 
         <div class='content'>
           <h3> About This Listing </h3>

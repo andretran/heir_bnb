@@ -3,6 +3,10 @@
   color: #565A5C;
 }
 
+.user-show-avatar{
+  width: 80%;
+}
+
 .user-show-location{
   margin-top: 0.5%;
   font-size: 15px;
@@ -78,7 +82,7 @@
 
 .edit-profile-button{
   margin-top: 5%;
-  font-size: 20px;
+  font-size: 1vw;
   padding-left: 26%;
   padding-right: 26%;
   border-style: solid;
@@ -89,7 +93,14 @@
 }
 
 .left-user-show{
-  padding: 0px;
+  background-color: #F5F5F5;
+  top: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: #DCE0E0;
+  border-width: 1px;
+  border-radius: 5px;
   text-align: center;
   width: 20%;
   z-index: 3;

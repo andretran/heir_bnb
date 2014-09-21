@@ -1,6 +1,6 @@
 json.extract! @space, :id, :title, :description, :price, :location, :about
 json.cover_photo @space.photo_preview.url(:big)
-json.user_avatar @space.user.avatar.url(:medium)
+json.user_avatar @space.user.avatar.url(:big)
 json.user_id @space.user.id
 json.user_name @space.user.first_name
 
