@@ -1,28 +1,25 @@
-== README
+= Heirbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+www.heirbnb.com
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+== Description
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Airbnb is now available in Westeros! Check out the characters from Game of Thrones rent out their spaces.
+
+
+
+== Project Information
+
+
+Full stack web application built on Backbone.js and Ruby on Rails. Incorporates User, Rooms, Reviews, Bookings MVC. Custom google maps tiles and auto correction search functionality.
+
+
+== Todos
+
+
+- Implement ability to add reviews
+- Add responsiveness for differnt screen sizes
+- Touch up CSS
+
+
